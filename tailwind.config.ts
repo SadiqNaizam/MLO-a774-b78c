@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { fontFamily as defaultFontFamily } from "tailwindcss/defaultTheme";
 
 export default {
 	darkMode: ["class"],
@@ -18,6 +19,9 @@ export default {
 			}
 		},
 		extend: {
+      fontFamily: {
+        sans: ['Nunito', ...defaultFontFamily.sans],
+      },
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,7 +65,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+        /* PRD specific colors not necessarily part of HSL theme */
+        accentGreen: '#198754',
+        chartColors: {
+          '1': '#FFCE56',
+          '2': '#E74C3C',
+          '3': '#3498DB',
+          '4': '#5DADE2'
+        }
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
